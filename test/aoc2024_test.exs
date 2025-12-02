@@ -3,11 +3,10 @@ defmodule Aoc2024Test do
 
   @moduletag timeout: :infinity
 
-  doctest Aoc2024
   doctest Util
 
   defp load_input(input) do
-    [:code.priv_dir(:aoc2024), input]
+    [:code.priv_dir(:aoc), "aoc2024", input]
       |> Path.join()
       |> File.read!()
   end
