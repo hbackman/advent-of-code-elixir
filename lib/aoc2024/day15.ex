@@ -72,7 +72,7 @@ defmodule Aoc2024.Day15 do
       |> gps()
   end
 
-  def part_two(input) do
+  def part_two(_input) do
 
   end
 

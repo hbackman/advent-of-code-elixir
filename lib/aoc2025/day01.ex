@@ -14,10 +14,8 @@ defmodule Aoc2025.Day01 do
     rem(rem(n, max) + max, max)
   end
 
-  def count_zeroes(pos, {_dir, 0}, zeroes),
-    do: {pos, zeroes}
-
-  def count_zeroes(pos, {dir, amt}, zeroes \\ 0) do
+  def count_zeroes(pos, {_dir, 0}, zeroes), do: {pos, zeroes}
+  def count_zeroes(pos, {dir, amt}, zeroes) do
     pos = case dir do
       "R" -> wrap(pos + 1)
       "L" -> wrap(pos - 1)
@@ -27,7 +25,7 @@ defmodule Aoc2025.Day01 do
   end
 
   def part_one(input) do
-    inst = input
+    input
       |> parse()
       |> Enum.reduce({50, 0}, fn {dir, amt}, {pos, zero} ->
        pos = case dir do
@@ -41,14 +39,13 @@ defmodule Aoc2025.Day01 do
   end
 
   def part_two(input) do
-    inst = input
+    input
       |> parse()
       |> Enum.reduce({50, 0}, fn {dir, amt}, {pos, zero} ->
-        {npos, wrap} = count_zeroes(pos, {dir, amt})
+        {npos, wrap} = count_zeroes(pos, {dir, amt}, 0)
         {npos, zero + wrap}
       end)
       |> elem(1)
-      |> IO.inspect
   end
 
 end

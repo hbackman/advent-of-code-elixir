@@ -142,19 +142,19 @@ defmodule Aoc2024.Day12 do
     end
   end
 
-  defp inspect_area(map, nodes, chr, extra \\ []) do
-    IO.puts "------------------ #{chr} ------------------"
-    map
-      |> Matrix.map(fn ch, {x, y} ->
-          cond do
-            Enum.member?(extra, {x, y}) -> "#"
-            Enum.member?(nodes, {x, y}) -> ch
-            true -> "."
-          end
-        end)
-      |> Matrix.inspect()
-    IO.puts ""
-  end
+#  defp inspect_area(map, nodes, chr, extra \\ []) do
+#    IO.puts "------------------ #{chr} ------------------"
+#    map
+#      |> Matrix.map(fn ch, {x, y} ->
+#          cond do
+#            Enum.member?(extra, {x, y}) -> "#"
+#            Enum.member?(nodes, {x, y}) -> ch
+#            true -> "."
+#          end
+#        end)
+#      |> Matrix.inspect()
+#    IO.puts ""
+#  end
 
   # M:  5 *  6 = 30
   # C:  1 *  4 = 4
